@@ -15,6 +15,42 @@
 # Until the user guesses the number.
 
 
+#_______________________________________________ With String __________________________________________________
+
+import random
+
+cows = 0   # initial setting as 0 cows
+bulls = 0   # initial setting as 0 cows
+generated_guess_number = str(random.randint(1000,9999))  # generating 4 digit number and then into string
+#print(generated_guess_number)  # printing the randomly generated number
+user_entered = str(input("Guess 4 digit number correctly")) # Asking user to input to guess number
+trails = 1  # no of guesses
+while(True):
+    if(generated_guess_number == user_entered):  # if true will get executed
+        print(f"Game Over !!!  ***Awesome*** You have guessed this in {trails} trials")
+        break
+    else:  # If incorrect guess
+        for i in range(len(user_entered)):
+            if generated_guess_number[i] == user_entered[i]: # if both alphabet match
+                # print(f"{k[i]} and {j[i]}") #To know which element is correct
+                cows += 1  # increment cow count
+            else:  # if both alphabet do not match
+                bulls +=1  # increment bull count
+        print(f"You have {cows} cows & {bulls} bulls !!! Try again until you get all cows")   # For each trail print for user to understand
+        user_entered = str(input("Enter 4 digit number"))
+        if (generated_guess_number == user_entered): # if true will get executed
+            print(f"Game Over !!! You have guessed this in {trails} trials")
+            break # break the loop if condition is true
+        cows = 0  # count making 0 to run loop for second trail with start
+        bulls = 0  # count making 0 to run loop for second trail with start
+        trails += 1  # increasing trail for each itteration
+
+
+
+#___________________________________________________ With Str to List ____________________________________________
+
+
+
 import random
 
 cows = 0   # initial setting as 0 cows
