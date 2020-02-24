@@ -1,0 +1,14 @@
+# file_name = input("Enter the file name to be saved by: ")
+name = input("Enter your name")
+with open(input("Enter the file name to be saved by")+'.txt','w') as file: # will open file in given mode
+    file.write(name) # write in to file
+if file.closed == True: # validation to check file has been closed or not
+    print("File has been close")
+else:
+    file.close() # closing the open file
+
+# 'r' : use for reading -- will not create file if not exist or file.write will not work
+# 'w' : use for writing -- will create file if not exist and  overwrite compelete text with new string into file
+# 'x' : use for creating and writing to a new file -- will create new if file exist and show error already exist file_name
+# 'a' : use for appending to a file -- will append from at cursor ends
+# 'r+' : use for reading and overwrite text in the same file from the start and if overwrite string is less than existing then will display existing string content
